@@ -1,5 +1,8 @@
 <?php
 
+namespace CSV;
+
+
 class CSVWriter
 {
     private $filename;
