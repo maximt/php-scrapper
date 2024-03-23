@@ -25,6 +25,10 @@ class Parser {
             return $this->carsLinksAll;
 
         $pages_links =  $this->startPage->getPagesLinks();
+        if (!$pages_links) {
+            echo "Pages not found\n";
+            return [];
+        }
 
         $page_cur = 0; $pages_cnt = count($pages_links);
         echo "Pages: {$pages_cnt}\n";

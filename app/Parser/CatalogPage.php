@@ -8,15 +8,20 @@ class CatalogPage extends Page {
 
 
     public function getCarsLinks(): array {
-        $items = $this->xpath->evaluate('//a[@class[contains(.,"listing-image")]]');
-        if ($items->length == 0)
+        try {
+            $items = $this->xpath->evaluate('//a[@class[contains(.,"listing-image")]]');
+            if ($items->length == 0)
+                return [];
+        
+            $car_links = [];
+            foreach ($items as $item) {
+                $car_links[] = $item->getAttribute('href');
+            }
+            return $car_links;
+        } catch (\Exception $e) {
+            echo "Error: {$e->getMessage()}\n";
             return [];
-    
-        $car_links = [];
-        foreach ($items as $item) {
-            $car_links[] = $item->getAttribute('href');
         }
-        return $car_links;
-    }
+}
 
 }
