@@ -8,7 +8,7 @@ use Parser\Page;
 class StartPage extends Page {
 
 
-    function getPagesCount(): int {
+    public function getPagesCount(): int {
         $pages = $this->xpath->evaluate('//li/a[@class[contains(.,"page-numbers")]]');
         if ($pages->length == 0)
             return 0;
@@ -24,7 +24,7 @@ class StartPage extends Page {
     }
     
 
-    function getPagesLinks(): array {   
+    public function getPagesLinks(): array {   
         $count = $this->getPagesCount();
 
         $url = trim($this->url, '/');

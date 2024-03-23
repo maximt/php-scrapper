@@ -11,7 +11,7 @@ class Page {
     protected DOMXPath $xpath;
 
     
-    function __construct(string $url) {
+    public function __construct(string $url) {
         $this->url = $url;
         $this->xpath = $this->getXPath($url);
     }

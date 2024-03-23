@@ -20,7 +20,7 @@ class Parser {
     }
 
 
-    function getCarsLinksAll(): array {
+    public function getCarsLinksAll(): array {
         if ($this->carsLinksAll)
             return $this->carsLinksAll;
 
@@ -49,7 +49,7 @@ class Parser {
     }
 
 
-    function getCarsAll(): array {
+    public function getCarsAll(): array {
         if ($this->carsAll)
             return $this->carsAll;
 

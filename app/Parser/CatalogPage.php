@@ -7,7 +7,7 @@ use Parser\Page;
 class CatalogPage extends Page {
 
 
-    function getCarsLinks(): array {
+    public function getCarsLinks(): array {
         $items = $this->xpath->evaluate('//a[@class[contains(.,"listing-image")]]');
         if ($items->length == 0)
             return [];

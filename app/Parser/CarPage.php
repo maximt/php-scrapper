@@ -9,7 +9,7 @@ use Parser\Page;
 class CarPage extends Page {
 
 
-    function getData(): array {
+    public function getData(): array {
         $details = $this->ParseCarDetails();
         $details['price'] = $this->getCarPrice();
         $details['images'] = $this->getCarImages();
